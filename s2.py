@@ -23,12 +23,15 @@ def findMyApp(apps, appName):
 def enableApps(applist, appListText):
     for _ in appListText:
         print("A")
-        findMyApp(applist, _).enable_maintenance_mode()
+#         findMyApp(applist, _).enable_maintenance_mode()
+        findMyApp(applist, _).process_formation()['worker'].scale(1) # run 1 dynos
+
 
 def disableApps(applist, appListText):
     for _ in appListText:
         print("B")
-        findMyApp(applist, _).disable_maintenance_mode()
+#         findMyApp(applist, _).disable_maintenance_mode()
+        findMyApp(applist, _).process_formation()['worker'].scale(0) # run 0 dynos
 
 #---------------------------------------------------------------
 last_time = time.time()%gapOfCheck
