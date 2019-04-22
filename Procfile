@@ -1,0 +1,1 @@
+worker: python s2.py
