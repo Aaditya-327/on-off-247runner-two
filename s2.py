@@ -1,7 +1,7 @@
 #for on-off-247runner-two
 
-first = ["on-off-247runner-one", "gau-bot"]
-second = ["on-off-247runner-two", "gau-bot2"]
+first = ["gau-bot", "on-off-247runner-one"]
+second = ["gau-bot2", "on-off-247runner-two"]
 
 #---------------------------------------------------------------
 
