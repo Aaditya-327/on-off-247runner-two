@@ -10,7 +10,7 @@ import time
 import os
 
 # gapOfCheck = 1728000
-gapOfCheck = 300
+gapOfCheck = 1296000 #15 days
 HEROKU_API = os.environ['HEROKU_API']
 heroku_conn = heroku3.from_key(HEROKU_API)
 
@@ -35,11 +35,14 @@ def disableApps(applist, appListText):
 
 #---------------------------------------------------------------
 last_time = time.time()%gapOfCheck
+count_time = 0
+
 while True:
     time.sleep(1)
     now = time.time()%gapOfCheck
 
-    print("Hands changed from B to A")
+    count_time = count_time+1
+    print("Har har mahadev, Jay Sharswati: ", count_time)
     # print(last_time, now, now-last_time)
     if last_time< gapOfCheck and now> 0 and now-last_time<0:
         if last_time-now>gapOfCheck/4:  
